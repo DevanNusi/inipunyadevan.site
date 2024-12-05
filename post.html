@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/c121f5569d.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="src/images/favicon.png">
+    <title>PT Pabrik Kertas Tjiwi Kimia Tbk - Tjiwi Kimia - Univenus</title>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    screens: {
+                        'sm': '640px',
+                        'md': '768px',
+                        'lg': '1024px',
+                        'xl': '1280px',
+                        '2xl': '1536px',
+                    },
+                    fontFamily: {
+                        'proxima': ['"Proxima Nova"', 'Arial', 'Helvetica', 'sans-serif'],
+                        'proxima-bold': ['"Proxima Nova Bold"', 'Arial', 'sans-serif']
+                    },
+                    colors: {
+                        'univenus-red': '#F42534',
+                        'univenus-green': '#7BAF43',
+                        'univenus-yellow': '#FCB529'
+                    },
+
+                    animation: {
+                        'bounce-slow': 'bounce 2s infinite',
+                        'pulse-slow': 'pulse 2s infinite'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-proxima bg-gray-100">
+    <nav class="fixed w-full z-10">
+        <section class="bg-univenus-red py-1.5 px-4 md:px-10">
+            <div class="container max-w-[1160px] mx-auto">
+                <ul class="flex justify-self-end w-full md:w-[455px] space-x-2 md:space-x-4 text-white items-center">
+                    <li class="hidden md:block"><a href="#" class="text-xs font-bold">JARINGAN GLOBAL</a></li>
+                    <li class="hidden md:block"><a href="#" class="text-xs font-bold">HUBUNGI KAMI</a></li>
+                    <li class="flex items-center">
+                        <label class="text-xs font-bold flex items-center">
+                            <img src="src/images/alternate-map-marker.svg" alt="location-pin" class="w-2.5 h-2.5 invert mr-1">
+                            LANGUAGE |
+                        </label>
+                        <select class="bg-univenus-red text-white text-xs border-none">
+                            <option value="indonesia">INDONESIA</option>
+                            <option value="english">ENGLISH</option>
+                        </select>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        
+        <section class="bg-white shadow-md">
+            <div class="max-w-[1175px] mx-auto flex flex-col md:flex-row justify-between items-center py-4 px-4 md:px-1.5">
+                <div class="flex w-full justify-between items-center">
+                    <img src="src/images/logo_univenus.svg" alt="logo univernus" class="w-40 md:w-60">
+                    
+                    <button id="mobile-menu-toggle" class="md:hidden">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+    
+                <ul class="hidden md:flex flex-wrap justify-center md:flex-nowrap space-x-4 md:space-x-11">
+                    <li><a href="index.html" class="text-gray-800 font-bold">Beranda</a></li>
+                    <li><a href="biodata.html" class="text-gray-800 font-bold">Biodata</a></li>
+                    <li><a href="contact_us.html" class="text-gray-800 font-bold">ContactUs</a></li>
+                    <li><a href="portfolio.html" class="text-gray-800 font-bold">Portfolio</a></li>
+                    <li><a href="#" class="text-gray-800 font-bold  border-b-2 border-univenus-red">AdditionalPage</a></li>
+                </ul>
+    
+                <div id="mobile-menu" class="fixed inset-0 bg-white transform translate-x-full transition-transform duration-300 ease-in-out md:hidden">
+                    <div class="flex justify-between items-center p-4 border-b">
+                        <img src="src/images/logo_univenus.svg" alt="logo univernus" class="w-40">
+                        <button id="mobile-menu-close" class="text-2xl">
+                            <i class="fa-solid fa-times"></i>
+                        </button>
+                    </div>
+                    <ul class="py-4">
+                        <li><a href="index.html" class="block px-4 py-2 border-b">Beranda</a></li>
+                        <li><a href="biodata.html" class="block px-4 py-2 border-b">Biodata</a></li>
+                        <li><a href="contact_us.html" class="block px-4 py-2 border-b">Contact Us</a></li>
+                        <li><a href="portfolio.html" class="block px-4 py-2 border-b">Portfolio</a></li>
+                        <li><a href="post.html" class="block px-4 py-2 border-b">Portfolio</a></li>
+
+                                        
+                        <li class="mobile-dropdown">
+                            <div class="flex justify-between items-center px-4 py-2 border-b">
+                                <span>#LifeAtUnivenus</span>
+                                <button class="mobile-dropdown-toggle">
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </button>
+                            </div>
+                            <ul class="hidden pl-4">
+                                <li><a href="events.html" class="block px-4 py-2">Events</a></li>
+                                <li><a href="culture.html" class="block px-4 py-2">Company Culture</a></li>
+                                <li><a href="team.html" class="block px-4 py-2">Our Team</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </nav>
+    <script src="src/navbar-logic.js"></script>
+
+    <main class="flex items-center justify-center min-h-screen p-4">
+        <div id="postCard" class="
+            w-full 
+            max-w-md 
+            bg-white 
+            text-black 
+            rounded-xl 
+            shadow-lg 
+            border 
+            border-gray-200
+            overflow-hidden 
+            transform 
+            transition-all 
+            duration-300 
+            hover:shadow-xl
+            md:max-w-xl
+            lg:max-w-2xl
+        ">
+            <div class="flex items-center justify-center h-full p-6">
+                <div class="text-center">
+                    <svg class="animate-pulse-slow mx-auto h-12 w-12 text-univenus-red" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+                    </svg>
+                    <p class="mt-4 text-lg animate-bounce-slow text-univenus-red">Loading Post...</p>
+                </div>
+            </div>
+        </div>
+    
+        <script src="src/fetch.js"></script>
+    </main>
+    
+    
+        
+        <footer class="bg-[#E9E9E9] mt-16">
+            <div class="max-w-[1170px] mx-auto grid grid-cols-1 md:grid-cols-[17%_33%_50%] grid-rows-1 text-[#3c3c3b] py-10">
+                <div class="grid grid-cols-1 grid-rows-[50%_50%] h-[60px] mb-8">
+                    <p class="font-proxima-bold">A company of</p>
+                    <img src="src/images/APP-logo.svg" alt="company logo" class="max-w-full">
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-[25%_75%] grid-rows-4 h-[160px] w-[240px] font-proxima-bold">
+                    <a href="https://fti.unai.edu/" class="col-span-2 text-[0.85rem] font-bold">FTI UNAI</a>
+                    <a href="https://unai.edu/" class="col-span-2 text-[0.85rem] font-bold">UNAI</a>
+                    <a href="#" class="text-[0.85rem] font-bold">CSR</a>
+                    <a href="#" class="text-[0.85rem] font-bold">Produk Kami</a>
+                    <a href="https://jurnal.unai.edu/index.php/teika" class="col-span-2 text-[0.85rem] font-bold">Jurnal Teika</a>
+                </div>
+                
+                <div class="grid grid-rows-4 grid-cols-1 h-[600px]">
+                    <div class="grid grid-cols-1 md:grid-cols-2 grid-rows-[20%_40%_30%] h-[180px]">
+                        <h5 class="col-span-2 text-[1.015rem] font-bold">PT. The Univenus Surabaya</h5>
+                        <p class="col-span-2 row-start-2 row-end-3 text-gray-600">
+                            Jl, Raya Surabaya - Krian KM 26 Desa Keboharan, Kec. Krian, Kabupaten Sidoarjo, Jawa Timur 61262
+                        </p>
+                        <p class="flex items-center">
+                            <i class="text-univenus-red fa-solid fa-phone mr-2"></i> (+62 31) 8983936
+                        </p>
+                        <p class=" flex items-center">
+                            <img src="src/images/printer.png" alt="printer" class="w-4 h-4 mr-2"> (+62 31) 8983939
+                        </p>
+                    </div>
+    
+                    <div class="grid grid-cols-1 md:grid-cols-2 grid-rows-[20%_40%_30%] h-[180px]">
+                        <h5 class="text-[1.015rem] font-bold">PT. The Univenus Cikupa</h5>
+                        <p class="text-gray-600">
+                            JL Raya Serang KM 12 Cikupa, Jl. Industri II, Sukadamai, Kec. Cikupa, Tangerang, Banten 15710
+                        </p>
+                        <p class="text-gray-700 flex items-center">
+                            <i class=" text-univenus-red fa-solid fa-phone mr-2"></i> (+62 21) 5960565
+                        </p>
+                    </div>
+    
+                    <div class="grid grid-cols-1 md:grid-cols-2 grid-rows-[20%_40%_30%] h-[180px]">
+                        <h5 class="text-[1.015rem] font-bold">PT. The Univenus Medan</h5>
+                        <p class="text-gray-600">
+                            Jl. Rawe IV Dalam, Kel. Tangkahan, Kec. Medan Labuhan, Kota Medan, Sumatera Utara 20259
+                        </p>
+                        <p class="text-gray-700 flex items-center">
+                            <i class="text-univenus-red fa-solid fa-phone mr-2"></i> (+62 61) 30007140
+                        </p>
+                    </div>
+    
+                    <div class="grid grid-cols-1 md:grid-cols-2 grid-rows-[20%_40%_30%] h-[180px]">
+                        <h5 class="text-[1.015rem] font-bold">PT. The Univenus Serang</h5>
+                        <p class="text-gray-600">
+                            Jl. Raya Serang KM 74, Ds. Sukamaju, Kec. Kibin, Kab. Serang, Banten 42185
+                        </p>
+                        <p class="text-gray-700 flex items-center">
+                            <i class="text-univenus-red fa-solid fa-phone mr-2"></i> (+62 254) 402211
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+    </html>

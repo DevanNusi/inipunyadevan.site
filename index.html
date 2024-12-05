@@ -1,116 +1,340 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>Learn Git</title>
-  </head>
-  <body>
-    <div class="container bg-blue-300 text-white p-4 mx-auto">
-      <h1
-        class="bg-red-600 sm:bg-blue-600 md:bg-yellow-600 px-8 py-4 rounded-lg text-center shadow-md"
-      >
-        Hi, I'm Learning <span class="font-bold">Git</span>
-      </h1>
+    <script src="https://kit.fontawesome.com/c121f5569d.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="src/images/favicon.png">
+    <title>PT Pabrik Kertas Tjiwi Kimia Tbk - Tjiwi Kimia - Univenus</title>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    screens: {
+                        'sm': '640px',
+                        'md': '768px',
+                        'lg': '1024px',
+                        'xl': '1280px',
+                        '2xl': '1536px',
+                    },
+                    fontFamily: {
+                        'proxima': ['"Proxima Nova"', 'Arial', 'Helvetica', 'sans-serif'],
+                        'proxima-bold': ['"Proxima Nova Bold"', 'Arial', 'sans-serif']
+                    },
+                    colors: {
+                        'univenus-red': '#F42534',
+                        'univenus-green': '#7BAF43',
+                        'univenus-yellow': '#FCB529'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-proxima">
+    <nav class="fixed w-full z-10">
+        <section class="bg-univenus-red py-1.5 px-4 md:px-10">
+            <div class="container max-w-[1160px] mx-auto">
+                <ul class="flex justify-self-end w-full md:w-[455px] space-x-2 md:space-x-4 text-white items-center">
+                    <li class="hidden md:block"><a href="#" class="text-xs font-bold">JARINGAN GLOBAL</a></li>
+                    <li class="hidden md:block"><a href="#" class="text-xs font-bold">HUBUNGI KAMI</a></li>
+                    <li class="flex items-center">
+                        <label class="text-xs font-bold flex items-center">
+                            <img src="src/images/alternate-map-marker.svg" alt="location-pin" class="w-2.5 h-2.5 invert mr-1">
+                            LANGUAGE |
+                        </label>
+                        <select class="bg-univenus-red text-white text-xs border-none">
+                            <option value="indonesia">INDONESIA</option>
+                            <option value="english">ENGLISH</option>
+                        </select>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        
+        <section class="bg-white shadow-md">
+            <div class="max-w-[1175px] mx-auto flex flex-col md:flex-row justify-between items-center py-4 px-4 md:px-1.5">
+                <div class="flex w-full justify-between items-center">
+                    <img src="src/images/logo_univenus.svg" alt="logo univernus" class="w-40 md:w-60">
+                    
+                    <button id="mobile-menu-toggle" class="md:hidden">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+    
+                <ul class="hidden md:flex flex-wrap justify-center md:flex-nowrap space-x-4 md:space-x-11">
+                    <li><a href="#" class="text-gray-800 font-bold border-b-2 border-univenus-red">Beranda</a></li>
+                    <li><a href="biodata.html" class="text-gray-800 font-bold">Biodata</a></li>
+                    <li><a href="contact_us.html" class="text-gray-800 font-bold">ContactUs</a></li>
+                    <li><a href="portfolio.html" class="text-gray-800 font-bold">Portfolio</a></li>
+                    <li><a href="post.html" class="text-gray-800 font-bold">AdditionalPage</a></li>
+                </ul>
+    
+                <div id="mobile-menu" class="fixed inset-0 bg-white transform translate-x-full transition-transform duration-300 ease-in-out md:hidden">
+                    <div class="flex justify-between items-center p-4 border-b">
+                        <img src="src/images/logo_univenus.svg" alt="logo univernus" class="w-40">
+                        <button id="mobile-menu-close" class="text-2xl">
+                            <i class="fa-solid fa-times"></i>
+                        </button>
+                    </div>
+                    <ul class="py-4">
+                        <li><a href="index.html" class="block px-4 py-2 border-b">Beranda</a></li>
+                        <li><a href="biodata.html" class="block px-4 py-2 border-b">Biodata</a></li>
+                        <li><a href="contact_us.html" class="block px-4 py-2 border-b">Contact Us</a></li>
+                        <li><a href="portfolio.html" class="block px-4 py-2 border-b">Portfolio</a></li>
+                        <li><a href="post.html" class="block px-4 py-2 border-b">Portfolio</a></li>
 
-      <a class="text-xs" href="https://fti.unai.ed">FTI UNAI Website</a>
-    </div>
-    <div class="flex flex-col md:flex-row">
-      <div class="bg-yellow-300 basis-1/4 text-center">A</div>
-      <div class="bg-green-300 basis-1/2">
-        B
-        <div class="flex row">
-          <div class="bg-green-500 basis-1/2">B1</div>
-          <div class="bg-green-700 basis-1/2">B2</div>
+                                        
+                        <li class="mobile-dropdown">
+                            <div class="flex justify-between items-center px-4 py-2 border-b">
+                                <span>#LifeAtUnivenus</span>
+                                <button class="mobile-dropdown-toggle">
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </button>
+                            </div>
+                            <ul class="hidden pl-4">
+                                <li><a href="events.html" class="block px-4 py-2">Events</a></li>
+                                <li><a href="culture.html" class="block px-4 py-2">Company Culture</a></li>
+                                <li><a href="team.html" class="block px-4 py-2">Our Team</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </nav>
+    <script src="src/navbar-logic.js"></script>
+
+    <main class="pt-[122px] max-w-[1170px] mx-auto px-4 md:px-0">
+        <header class="pt-[122px]">
+            <div class="w-full h-[300px] md:h-[500px] overflow-hidden">
+                <iframe 
+                    id="hero-video" 
+                    src="https://www.youtube.com/embed/SJxMmbmGGag?rel=0&amp;showinfo=0&amp;modestbranding=1&amp;playsinline=1&amp;controls=0&amp;color=white&amp;playlist=SJxMmbmGGag&amp;loop=1&amp;mute=1&amp;enablejsapi=1&amp;origin=https%3A%2F%2Funivenus.co.id&amp;widgetid=1&amp;autoplay=1"
+                    class="w-full h-full pointer-events-none scale-[1] md:scale-[1.75]"
+                    frameborder="0"
+                ></iframe>
+            </div>
+        </header>
+
+        <section class="my-12 flex flex-col md:flex-row justify-around">
+            <div class="flex flex-col justify-between max-w-full md:max-w-[464px] mb-8 md:mb-0">
+                <div class="flex flex-col gap-6">
+                    <h2 class="text-2xl md:text-4xl font-proxima-bold pl-1.5 border-l-[10px] border-univenus-red">
+                        Tentang Univenus
+                    </h2>
+                    <p class="leading-7 text-base">
+                        Univenus adalah perusahaan internasional dalam industri pulp, kertas & konversi. 
+                        Perusahaan didirikan pada tahun 1975 sebagai perseroan terbatas dengan nama PT. 
+                        THE UNIVENUS, berkedudukan di Tangerang ("Perseroan"), pada tanggal 10 September 1975.
+                    </p>
+                </div>
+                <a href="#" class="w-full text-univenus-red border border-univenus-red text-center py-2.5 text-sm font-proxima-bold 
+                    transition-all duration-300 ease-in-out 
+                    hover:bg-univenus-red hover:text-white 
+                    hover:shadow-lg hover:scale-105 mt-4">
+                    Baca Lebih Lengkap
+                </a>
+            </div>
+            <div class="overflow-hidden h-[200px] md:h-[355px] w-full md:w-[670px]">
+                <img 
+                 src="src/images/factory.jpg" 
+                alt="factory" 
+                class="w-full object-cover md:-translate-y-[15%]"
+                >
+            </div>
+        </section>
+
+        <section class="max-w-[1170px] mx-auto px-4 md:px-0">
+            <h2 class="text-2xl md:text-4xl font-proxima-bold pl-1.5 border-l-[10px] border-univenus-red mb-8">
+                Produk Kami
+            </h2>
+            <div class="flex flex-col md:flex-row gap-[30px] my-8">
+                <div class="flex flex-col md:flex-row bg-univenus-green shadow-lg rounded-lg overflow-hidden">
+                    <img 
+                        src="src/images/paper-plus.jpg" 
+                        alt="paper plus" 
+                        class="w-full md:w-[385px] h-[250px] md:h-[380px] object-cover"
+                    >
+                    <div class="flex flex-col justify-between w-full md:max-w-[390px] text-white">
+                        <div class="flex flex-col p-4 md:p-6 space-y-4">
+                            <div>
+                                <img 
+                                    src="src/images/sinarline-logo.png" 
+                                    alt="sinarline logo" 
+                                    class="w-[120px] md:w-[150px] mb-3"
+                                >
+                                <p class="text-sm md:text-base">Berbagai produk premium untuk pasar kedua: Timur Tengah dan Afrika</p>
+                            </div>
+                            <div>
+                                <img 
+                                    src="src/images/paper-line-logo.png" 
+                                    alt="paper line logo" 
+                                    class="w-[120px] md:w-[150px] mb-3"
+                                >
+                                <p class="text-sm md:text-base">Merek global APP untuk barang-barang Alat Tulis dan Kantor premium</p>
+                            </div>
+                        </div>
+                        <a href="#" class="bg-black py-3 md:py-4 text-center text-white font-proxima-bold 
+                            hover:bg-univenus-red hover:shadow-lg transition-all duration-300
+                            block w-full">
+                            Read More
+                        </a>
+                    </div>
+                </div>
+                <div class="flex flex-col bg-univenus-yellow w-full md:w-[390px] shadow-lg rounded-lg overflow-hidden">
+                    <div class="flex-grow p-4 md:p-6 flex items-center">
+                        <p class="text-2xl md:text-3xl text-white">Tisu</p>
+                    </div>
+                    <a href="#" class="bg-black py-3 md:py-4 text-center text-white font-proxima-bold 
+                        hover:bg-univenus-red hover:shadow-lg transition-all duration-300
+                        block w-full">
+                        Read More
+                    </a>
+                </div>
+            </div>
+            <a href="#" class="flex justify-center items-center 
+                border border-red-600 text-red-600 
+                py-2.5 w-full gap-5 
+                font-proxima-bold text-sm
+                hover:bg-red-600 hover:text-white 
+                transition-all duration-300 ease-in-out 
+                hover:scale-[1.02]">
+                <i class="fa-solid fa-magnifying-glass"></i> Browse Our Products
+            </a>
+        </section>
+
+        <section class="my-12">
+            <div class="relative w-full h-[294px] overflow-hidden">
+                <img src="src/images/sprouts.jpeg" alt="sprouts" class="w-full h-full object-cover">
+                <div class="absolute top-0 w-full md:w-1/2 h-full p-4 md:p-8 flex flex-col justify-between">
+                    <div class="text-white font-proxima-bold">
+                        <h3 class="text-xl md:text-2xl">APP Sinar Mas Sustainability</h3>
+                        <h2 class="text-2xl md:text-4xl">Tumbuhkan Esok Bersama</h2>
+                        <p class="leading-6 md:leading-8 text-sm md:text-base mt-2">
+                            Visi kami untuk memproduksi pulp dan paper yang efisien dan inovatif melalui praktik kehutanan yang bertanggungjawab.
+                        </p>
+                    </div>
+                    <a href="#" class="border border-white text-white text-center py-2.5
+                        transition-all duration-300 ease-in-out 
+                        hover:bg-white hover:text-black 
+                        hover:shadow-lg hover:scale-105">
+                        Learn More
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-8 my-12">
+            <a href="#" class="relative overflow-hidden w-full group">
+                <img src="src/images/donation.jpeg" alt="donation" 
+                    class="w-full transition-transform duration-500 group-hover:scale-110 group-hover:brightness-75">
+                <div class="absolute bottom-0 w-full text-white text-2xl p-6 
+                    transition-all duration-500 
+                    bg-black bg-opacity-0 group-hover:bg-opacity-50">
+                    <h4 class="transform translate-y-full opacity-0 
+                        transition-all duration-500 
+                        group-hover:translate-y-0 group-hover:opacity-100">
+                        CSR
+                    </h4>
+                </div>
+            </a>
+            <a href="#" class="relative overflow-hidden w-full group">
+                <img src="src/images/factory-workers.jpeg" alt="factory workers" 
+                    class="w-full transition-transform duration-500 group-hover:scale-110 group-hover:brightness-75">
+                <div class="absolute bottom-0 w-full text-white text-2xl p-6 
+                    transition-all duration-500 
+                    bg-black bg-opacity-0 group-hover:bg-opacity-50 ">
+                    <h4 class="transform translate-y-full opacity-0 
+                        transition-all duration-500 
+                        group-hover:translate-y-0 group-hover:opacity-100">
+                        People
+                    </h4>
+                </div>
+            </a>
+            <a href="#" class="relative overflow-hidden w-full group">
+                <img src="src/images/lab.jpeg" alt="laboratory" 
+                    class="w-full transition-transform duration-500 group-hover:scale-110 group-hover:brightness-75">
+                <div class="absolute bottom-0 w-full text-white text-2xl p-6 
+                    transition-all duration-500 
+                    bg-black bg-opacity-0 group-hover:bg-opacity-50">
+                    <h4 class="transform translate-y-full opacity-0 
+                        transition-all duration-500 
+                        group-hover:translate-y-0 group-hover:opacity-100">
+                        Penelitian & Pengembangan
+                    </h4>
+                </div>
+            </a>
+        </section>
+
+        <a href="#" class="bg-univenus-red p-4 flex justify-center items-center max-w-[60px] justify-self-end
+        transition-all duration-300 ease-in-out 
+        hover:opacity-80 hover:scale-110">
+            <img src="src/images/arrow_top.svg" alt="arrow top">
+        </a>
+    </main>
+
+    <footer class="bg-[#E9E9E9] mt-16">
+        <div class="max-w-[1170px] mx-auto grid grid-cols-1 md:grid-cols-[17%_33%_50%] grid-rows-1 text-[#3c3c3b] py-10">
+            <div class="grid grid-cols-1 grid-rows-[50%_50%] h-[60px] mb-8">
+                <p class="font-proxima-bold">A company of</p>
+                <img src="src/images/APP-logo.svg" alt="company logo" class="max-w-full">
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-[25%_75%] grid-rows-4 h-[160px] w-[240px] font-proxima-bold">
+                <a href="https://fti.unai.edu/" class="col-span-2 text-[0.85rem] font-bold">FTI UNAI</a>
+                <a href="https://unai.edu/" class="col-span-2 text-[0.85rem] font-bold">UNAI</a>
+                <a href="#" class="text-[0.85rem] font-bold">CSR</a>
+                <a href="#" class="text-[0.85rem] font-bold">Produk Kami</a>
+                <a href="https://jurnal.unai.edu/index.php/teika" class="col-span-2 text-[0.85rem] font-bold">Jurnal Teika</a>
+            </div>
+            
+            <div class="grid grid-rows-4 grid-cols-1 h-[600px]">
+                <div class="grid grid-cols-1 md:grid-cols-2 grid-rows-[20%_40%_30%] h-[180px]">
+                    <h5 class="col-span-2 text-[1.015rem] font-bold">PT. The Univenus Surabaya</h5>
+                    <p class="col-span-2 row-start-2 row-end-3 text-gray-600">
+                        Jl, Raya Surabaya - Krian KM 26 Desa Keboharan, Kec. Krian, Kabupaten Sidoarjo, Jawa Timur 61262
+                    </p>
+                    <p class="flex items-center">
+                        <i class="text-univenus-red fa-solid fa-phone mr-2"></i> (+62 31) 8983936
+                    </p>
+                    <p class=" flex items-center">
+                        <img src="src/images/printer.png" alt="printer" class="w-4 h-4 mr-2"> (+62 31) 8983939
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 grid-rows-[20%_40%_30%] h-[180px]">
+                    <h5 class="text-[1.015rem] font-bold">PT. The Univenus Cikupa</h5>
+                    <p class="text-gray-600">
+                        JL Raya Serang KM 12 Cikupa, Jl. Industri II, Sukadamai, Kec. Cikupa, Tangerang, Banten 15710
+                    </p>
+                    <p class="text-gray-700 flex items-center">
+                        <i class=" text-univenus-red fa-solid fa-phone mr-2"></i> (+62 21) 5960565
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 grid-rows-[20%_40%_30%] h-[180px]">
+                    <h5 class="text-[1.015rem] font-bold">PT. The Univenus Medan</h5>
+                    <p class="text-gray-600">
+                        Jl. Rawe IV Dalam, Kel. Tangkahan, Kec. Medan Labuhan, Kota Medan, Sumatera Utara 20259
+                    </p>
+                    <p class="text-gray-700 flex items-center">
+                        <i class="text-univenus-red fa-solid fa-phone mr-2"></i> (+62 61) 30007140
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 grid-rows-[20%_40%_30%] h-[180px]">
+                    <h5 class="text-[1.015rem] font-bold">PT. The Univenus Serang</h5>
+                    <p class="text-gray-600">
+                        Jl. Raya Serang KM 74, Ds. Sukamaju, Kec. Kibin, Kab. Serang, Banten 42185
+                    </p>
+                    <p class="text-gray-700 flex items-center">
+                        <i class="text-univenus-red fa-solid fa-phone mr-2"></i> (+62 254) 402211
+                    </p>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="bg-pink-300 basis-1/4">C</div>
-      <div class="mt-8 mx-auto text-center">
-        <a
-          class="bg-gray-300 hover:text-white hover:bg-sky-500 p-3 px-6 rounded-lg hover:shadow-md text-center"
-          href="#"
-          >Login</a
-        >
-      </div>
-    </div>
-
-<<<<<<< HEAD
-=======
-    <div>
-      <img src="img/sirclo-store-1.png" alt="sirclo logo" />
-    </div>
-
->>>>>>> add_tailwindcss
-    <div class="flex">
-      <nav class="basis-1/2 text-left">SIRCLO STORE</nav>
-
-      <nav class="basis-1/2 text-center">
-        <ul class="list-none flex">
-          <li class="mx-4">Solusi</li>
-          <li class="mx-4">Harga</li>
-          <li class="mx-4">Template</li>
-          <li class="mx-4">Blog</li>
-          <li class="mx-4">Affiliate</li>
-          <li class="mx-4">Lainnya</li>
-        </ul>
-      </nav>
-
-      <nav class="basis-1/2 text-right">
-<<<<<<< HEAD
-        <a classhref="#">Coba Gratis</a>
-        <a href="#">Login</a>
-=======
-        <a href="#">Coba Gratis</a>
-        <a href="#" bg-cyan-500>Login</a>
->>>>>>> add_tailwindcss
-      </nav>
-    </div>
-
-    <div class="flex row flex-col md:flex-row">
-      <div class="basis-1/2">
-        <span class="font-bold text-gray-400">SIRCLO STORE </span>
-        <ul class="list-none text-gray-300">
-          <li>Fitur</li>
-          <li>Template</li>
-          <li>Harga</li>
-          <li>Langganan Basic</li>
-          <li>Toko Online Gratis</li>
-        </ul>
-      </div>
-      <div class="basis-1/2">
-        <span class="font-bold text-gray-400">SIRCLO STORE </span>
-        <ul class="list-none text-gray-300">
-          <li>Fitur</li>
-          <li>Template</li>
-          <li>Harga</li>
-          <li>Langganan Basic</li>
-          <li>Toko Online Gratis</li>
-        </ul>
-      </div>
-      <div class="basis-1/2">
-        <span class="font-bold text-gray-400">SIRCLO STORE </span>
-        <ul class="list-none text-gray-300">
-          <li>Fitur</li>
-          <li>Template</li>
-          <li>Harga</li>
-          <li>Langganan Basic</li>
-          <li>Toko Online Gratis</li>
-        </ul>
-      </div>
-      <div class="basis-1/2">
-        <span class="font-bold text-gray-400">SIRCLO STORE </span>
-        <ul class="list-none text-gray-300">
-          <li>Fitur</li>
-          <li>Template</li>
-          <li>Harga</li>
-          <li>Langganan Basic</li>
-          <li>Toko Online Gratis</li>
-        </ul>
-      </div>
-      <div class="basis-1/2">
-        <span class="font-bold text-gray-400">MEDIA SOSIAL </span>
-      </div>
-    </div>
-  </body>
+    </footer>
+</body>
 </html>
